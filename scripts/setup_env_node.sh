@@ -52,6 +52,7 @@ echo "---------------------------- Update project package  ---------------------
 echo "--------------------------------------------------------------------------------"
 
 cd .. ; npm install --save ; cd scripts/
+npm install -g node-gyp
 
 echo "--------------------------------------------------------------------------------"
 echo "------------- Configuration of the LAN : setup an static ipaddress  ------------"
