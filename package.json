@@ -14,6 +14,7 @@
     "mqtt": "^2.18.8",
     "nconf": "^0.10.0",
     "noble": "^1.9.1",
+    "ws": "latest",
     "node-beacon-scanner": "^0.1.0"
   }
 }

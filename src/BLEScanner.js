@@ -37,7 +37,9 @@ module.exports = class BeaconScanner {
     /**
       * Init the module : setup the configuration of the scanner
       */
-    constructor() {
+    constructor(configuration) {
+        this.idRelai = configuration.getConfigurationData('localisation:id');
+
         this.handlers = [];
 
         this.captures = new Map(); 
@@ -57,9 +59,9 @@ module.exports = class BeaconScanner {
                     resultJsonObject['event'] = "beaconData";
                     resultJsonObject['date'] = Date.now();
                     resultJsonObject['data'] = advertisement;
-                    
+                    resultJsonObject['idRelai'] = this.idRelai;
                     console.log(resultJsonObject);
-                    
+
                     this.notifyAllObservers(resultJsonObject);
 
                     this.captures.delete(advertisement['iBeacon'].uuid);
