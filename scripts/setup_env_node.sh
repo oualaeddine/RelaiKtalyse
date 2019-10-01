@@ -66,9 +66,15 @@ echo "--------------------------------------------------------------------------
 
 
 sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
-sudo cp relaiKtalyse.service /etc/systemd/system/relaiKtalyse.service
-sudo cp relaiKtalyse.timer /etc/systemd/system/relaiKtalyse.timer
-sudo systemctl enable relaiKtalyse.timer
+#sudo cp relaiKtalyse.service /etc/systemd/system/relaiKtalyse.service
+#sudo cp relaiKtalyse.timer /etc/systemd/system/relaiKtalyse.timer
+#sudo systemctl enable relaiKtalyse.timer
+
+sudo npm install -g pm2
+sudo pm2 start /home/pi/RelaiKtalyse/src/relaiKtalyse.js
+sudo pm2 startup
+sudo pm2 save
+
 
 echo "--------------------------------------------------------------------------------"
 echo "-------------------------- Reboot in five seconds  -----------------------------"
