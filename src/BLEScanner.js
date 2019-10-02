@@ -37,8 +37,8 @@ module.exports = class BeaconScanner {
     /**
       * Init the module : setup the configuration of the scanner
       */
-    constructor(configuration) {
-        this.idRelai = configuration.getConfigurationData('localisation:id');
+    constructor(id) {
+        this.idRelai = id;
 
         this.handlers = [];
 
