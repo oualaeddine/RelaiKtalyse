@@ -1,4 +1,4 @@
-let chambre = "3";
+const chambre = "3";
 
 
 //const Configuration = require('./Configuration.js');
